@@ -145,6 +145,8 @@ function calculateAnswer(firstString, operator, secondString){
     } else if(operator == "/"){
         if (secondNumber == 0){
             alert ("Nice try. No dividing by zero!");
+            return firstNumber / 1;
+            // replace this once clear button active
         } else {
             return firstNumber / secondNumber;
         }
