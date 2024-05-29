@@ -5,8 +5,8 @@ let secondInput;
 
 // Need inputdisplay and function display!!!!
 
-const display = document.getElementById("display");
-const functionDisplay = document.getElementById("functionDisplay");
+const inputDisplay = document.getElementById("inputDisplay");
+const calculationDisplay = document.getElementById("calculationDisplay");
 
 const buttonOne = document.getElementById("btn1");
 buttonOne.addEventListener("click", () => {
@@ -61,6 +61,21 @@ buttonZero.addEventListener("click", () => {
     }
 })
 
+const buttonDivide = document.getElementById("btn/");
+buttonDivide.addEventListener("click", () => {
+    getFirstInput(displayValue, "/");
+})
+
+const buttonMultiply = document.getElementById("btn*");
+buttonMultiply.addEventListener("click", () => {
+    getFirstInput(displayValue, "*");
+})
+
+const buttonSubtract = document.getElementById("btn-");
+buttonSubtract.addEventListener("click", () => {
+    getFirstInput(displayValue, "-");
+})
+
 const buttonPlus = document.getElementById("btn+");
 buttonPlus.addEventListener("click", () => {
     getFirstInput(displayValue, "+");
@@ -75,10 +90,8 @@ buttonEquals.addEventListener("click", () => {
 function getNewDisplay (newString) {
     displayValue = displayValue + newString;
     let newDisplay = document.createTextNode(displayValue);
-    display.removeChild(display.lastChild);
-    display.appendChild(newDisplay);
-    return displayValue;
-    // Do we need this return?
+    inputDisplay.removeChild(inputDisplay.lastChild);
+    inputDisplay.appendChild(newDisplay);
 };
 
 function getFirstInput (value, operator){
@@ -86,28 +99,27 @@ function getFirstInput (value, operator){
     operatorInput = operator;
     displayValue = "";
 
-    let newFunctionDisplay = document.createTextNode(firstInput + " " + operator);
-    functionDisplay.removeChild(functionDisplay.lastChild);
-    functionDisplay.appendChild(newFunctionDisplay);
+    let newCalculationDisplay = document.createTextNode(firstInput + " " + operator);
+    calculationDisplay.removeChild(calculationDisplay.lastChild);
+    calculationDisplay.appendChild(newCalculationDisplay);
 
     let newDisplay = document.createTextNode(displayValue);
-    display.removeChild(display.lastChild);
-    display.appendChild(newDisplay);
+    inputDisplay.removeChild(inputDisplay.lastChild);
+    inputDisplay.appendChild(newDisplay);
 };
 
 function getSecondInput (value, operator){
     secondInput = value;
     operatorInput = operator;
-    displayValue = "";
+    displayValue = calculateAnswer(firstInput, operatorInput, secondInput).toString();
 
-    let newFunctionDisplay = document.createTextNode(firstInput + " " + operator + "" + secondInput + " =");
-    functionDisplay.removeChild(functionDisplay.lastChild);
-    functionDisplay.appendChild(newFunctionDisplay);
+    let newCalculationDisplay = document.createTextNode(firstInput + " " + operator + "" + secondInput + " =");
+    calculationDisplay.removeChild(calculationDisplay.lastChild);
+    calculationDisplay.appendChild(newCalculationDisplay);
 
-    let newDisplay = document.createTextNode(calculateAnswer(firstInput, operatorInput, secondInput));
-    display.removeChild(display.lastChild);
-    display.appendChild(newDisplay);
-
+    let newDisplay = document.createTextNode(displayValue);
+    inputDisplay.removeChild(inputDisplay.lastChild);
+    inputDisplay.appendChild(newDisplay);
 
 };
 
@@ -132,9 +144,3 @@ function calculateAnswer(firstString, operator, secondString){
         return "?";
     }
 };
-
-console.log(calculateAnswer(2, "+", 3));
-console.log(calculateAnswer(2, "-", 3));
-console.log(calculateAnswer(2, "*", 3));
-console.log(calculateAnswer(10, "/", 0));
-console.log(calculateAnswer(10, "+", 2));

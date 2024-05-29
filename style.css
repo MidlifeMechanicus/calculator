@@ -16,7 +16,7 @@ body {
         flex-wrap: wrap;
         width: 80vw;
 
-        #functionDisplay {
+        #calculationDisplay {
             width: 80vw;
             text-align: right;
         }
@@ -25,7 +25,7 @@ body {
             width: 20vw;
         }
 
-        #display {
+        #inputDisplay {
             width: 60vw;
             text-align: right;
         }
