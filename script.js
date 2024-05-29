@@ -1,4 +1,9 @@
 let displayValue = "";
+let firstInput;
+let operatorInput;
+let secondInput;
+
+// Need inputdisplay and function display!!!!
 
 const display = document.getElementById("display");
 
@@ -57,6 +62,15 @@ buttonZero.addEventListener("click", () => {
 
 function getNewDisplay (newString) {
     displayValue = displayValue + newString;
+    let newDisplay = document.createTextNode(displayValue);
+    display.removeChild(display.lastChild)
+    display.appendChild(newDisplay);
+};
+
+function getFirstInput (operator){
+    let firstInput = displayValue;
+    let displayValue = "";
+    let operatorInput = operator;
     let newDisplay = document.createTextNode(displayValue);
     display.removeChild(display.lastChild)
     display.appendChild(newDisplay);
