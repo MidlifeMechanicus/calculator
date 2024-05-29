@@ -9,6 +9,21 @@ body {
     flex-direction: column;
     height: 100vh;
     justify-content: center;
+    align-items: center;
+
+    #display {
+        width: 80vw;
+    }
+
+    #specialRow {
+        display: flex;
+        justify-content: flex-end;
+        width: 80vw;
+
+        button {
+            width: 20vw;
+        }
+    }
 
     #keyPad {
         display: flex;
