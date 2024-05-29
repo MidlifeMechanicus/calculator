@@ -3,7 +3,7 @@ let firstInput;
 let operatorInput;
 let secondInput;
 
-// Need inputdisplay and function display!!!!
+// Todo: html/css (obviously), rounding, check early =, clear button, error message.
 
 const inputDisplay = document.getElementById("inputDisplay");
 const calculationDisplay = document.getElementById("calculationDisplay");
@@ -95,7 +95,11 @@ function getNewDisplay (newString) {
 };
 
 function getFirstInput (value, operator){
-    firstInput = value;
+    // if (value == ""){
+        // value = "0";
+    // }
+    // Above code is condensed below.
+    firstInput = (value == "") ? "0" : value;
     operatorInput = operator;
     displayValue = "";
 
@@ -109,7 +113,11 @@ function getFirstInput (value, operator){
 };
 
 function getSecondInput (value, operator){
-    secondInput = value;
+    // if (value == ""){
+        // value = "0";
+    // }
+    // Above code is condensed below.
+    secondInput = (value == "") ? "0" : value;
     operatorInput = operator;
     displayValue = calculateAnswer(firstInput, operatorInput, secondInput).toString();
 
@@ -136,7 +144,7 @@ function calculateAnswer(firstString, operator, secondString){
         return firstNumber * secondNumber;
     } else if(operator == "/"){
         if (secondNumber == 0){
-            return "Nice try. No dividing by zero!"
+            alert ("Nice try. No dividing by zero!");
         } else {
             return firstNumber / secondNumber;
         }
