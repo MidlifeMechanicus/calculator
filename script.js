@@ -47,6 +47,14 @@ buttonNine.addEventListener("click", () => {
     getNewDisplay("9");
 })
 
+const buttonZero = document.getElementById("btn0");
+buttonZero.addEventListener("click", () => {
+    if (displayValue == ""){
+    } else {
+        getNewDisplay("0");
+    }
+})
+
 function getNewDisplay (newString) {
     displayValue = displayValue + newString;
     let newDisplay = document.createTextNode(displayValue);
