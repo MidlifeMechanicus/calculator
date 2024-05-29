@@ -3,10 +3,22 @@ let firstInput;
 let operatorInput;
 let secondInput;
 
-// Todo: html/css (obviously), rounding, clear button
+// Todo: html/css (obviously), rounding, clear button, double operater issue
 
 const inputDisplay = document.getElementById("inputDisplay");
 const calculationDisplay = document.getElementById("calculationDisplay");
+
+const buttonClear = document.getElementById("btnClear");
+buttonClear.addEventListener("click", () => {
+    displayValue = "";
+    let newDisplay = document.createTextNode(displayValue);
+    inputDisplay.removeChild(inputDisplay.lastChild);
+    inputDisplay.appendChild(newDisplay);"?"
+
+    let newCalculationDisplay = document.createTextNode("");
+    calculationDisplay.removeChild(calculationDisplay.lastChild);
+    calculationDisplay.appendChild(newCalculationDisplay);
+})
 
 const buttonOne = document.getElementById("btn1");
 buttonOne.addEventListener("click", () => {
@@ -81,7 +93,7 @@ buttonPlus.addEventListener("click", () => {
     getFirstInput(displayValue, "+");
 })
 
-const buttonEquals = document.getElementById("btn=");
+const buttonEquals = document.getElementById("btnEql");
 buttonEquals.addEventListener("click", () => {
     getSecondInput(displayValue, operatorInput);
 })
@@ -122,7 +134,7 @@ function getSecondInput (value, operator){
     displayValue = "";
     displayAnswer = calculateAnswer(firstInput, operatorInput, secondInput).toString();
 
-    let newCalculationDisplay = document.createTextNode(firstInput + " " + operator + " " + secondInput + " =");
+    let newCalculationDisplay = document.createTextNode(firstInput + " " + operator + " " + secondInput + " = ");
     calculationDisplay.removeChild(calculationDisplay.lastChild);
     calculationDisplay.appendChild(newCalculationDisplay);
 

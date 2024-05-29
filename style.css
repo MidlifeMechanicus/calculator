@@ -11,44 +11,61 @@ body {
     justify-content: center;
     align-items: center;
 
-    #displayContainer {
+    #calculatorContainer {
         display: flex;
-        flex-wrap: wrap;
-        width: 80vw;
+        flex-direction: column;;
 
-        #calculationDisplay {
-            width: 80vw;
-            text-align: right;
-        }
-
-        button {
-            width: 20vw;
-        }
-
-        #inputDisplay {
-            width: 60vw;
-            text-align: right;
-        }
-    }
-
-    #keyPad {
-        display: flex;
-        justify-content: center;
-
-        #numeralContainer {
+        #displayContainer {
             display: flex;
             flex-wrap: wrap;
-            width: 60vw;
-    
+            width: 80vw;
+
+            #calculationDisplay {
+                height: 10vw;
+                width: 80vw;
+                text-align: right;
+            }
+
             button {
-                width: 33.3333%;
+                width: 20vw;
+            }
+
+            #inputDisplay {
+                width: 60vw;
+                text-align: right;
             }
         }
 
-        #operatorContainer {
+        #keyPad {
             display: flex;
-            flex-direction: column;
-            width: 20vw;
+            justify-content: center;
+
+            #numeralContainer {
+                display: flex;
+                flex-wrap: wrap;
+                width: 60vw;
+            
+                button {
+                    width: 33.3333%;
+                }
+            }
+
+            #operatorContainer {
+                display: flex;
+                flex-direction: column;
+                width: 20vw;
+            }
+        }
+
+        #specialKeyContainer {
+
+            #btnClear {
+                width: 20vw;
+            }
+
+            #btnEql {
+                width: 60vw;
+            }
         }
     }
 }
