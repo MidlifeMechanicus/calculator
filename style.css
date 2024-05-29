@@ -3,3 +3,32 @@
     margin: 0;
     border: 1px solid black;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+
+    #keyPad {
+        display: flex;
+        justify-content: center;
+
+        #numeralContainer {
+            display: flex;
+            flex-wrap: wrap;
+            width: 60vw;
+    
+            button {
+                width: 33.3333%;
+            }
+        }
+
+        #operatorContainer {
+            display: flex;
+            flex-direction: column;
+            width: 20vw;
+        }
+    }
+}
+
