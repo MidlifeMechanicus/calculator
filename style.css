@@ -12,17 +12,16 @@ body {
     align-items: center;
 
     #displayContainer {
-        width: 80vw;
-        text-align: right;
-    }
-
-    #specialRow {
         display: flex;
-        justify-content: flex-end;
         width: 80vw;
 
         button {
             width: 20vw;
+        }
+
+        #display {
+            width: 60vw;
+            text-align: right;
         }
     }
 
