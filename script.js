@@ -3,7 +3,7 @@ let firstInput;
 let operatorInput;
 let secondInput;
 
-// Todo: html/css (obviously), rounding, check early =, clear button, error message.
+// Todo: html/css (obviously), rounding, clear button
 
 const inputDisplay = document.getElementById("inputDisplay");
 const calculationDisplay = document.getElementById("calculationDisplay");
@@ -119,13 +119,14 @@ function getSecondInput (value, operator){
     // Above code is condensed below.
     secondInput = (value == "") ? "0" : value;
     operatorInput = operator;
-    displayValue = calculateAnswer(firstInput, operatorInput, secondInput).toString();
+    displayValue = "";
+    displayAnswer = calculateAnswer(firstInput, operatorInput, secondInput).toString();
 
-    let newCalculationDisplay = document.createTextNode(firstInput + " " + operator + "" + secondInput + " =");
+    let newCalculationDisplay = document.createTextNode(firstInput + " " + operator + " " + secondInput + " =");
     calculationDisplay.removeChild(calculationDisplay.lastChild);
     calculationDisplay.appendChild(newCalculationDisplay);
 
-    let newDisplay = document.createTextNode(displayValue);
+    let newDisplay = document.createTextNode(displayAnswer);
     inputDisplay.removeChild(inputDisplay.lastChild);
     inputDisplay.appendChild(newDisplay);
 
