@@ -6,6 +6,7 @@ let secondInput;
 // Need inputdisplay and function display!!!!
 
 const display = document.getElementById("display");
+const functionDisplay = document.getElementById("functionDisplay");
 
 const buttonOne = document.getElementById("btn1");
 buttonOne.addEventListener("click", () => {
@@ -60,19 +61,34 @@ buttonZero.addEventListener("click", () => {
     }
 })
 
+const buttonPlus = document.getElementById("btn+");
+buttonPlus.addEventListener("click", () => {
+    getFirstInput(displayValue, "+");
+})
+
 function getNewDisplay (newString) {
     displayValue = displayValue + newString;
     let newDisplay = document.createTextNode(displayValue);
-    display.removeChild(display.lastChild)
+    display.removeChild(display.lastChild);
     display.appendChild(newDisplay);
+    return displayValue;
 };
 
-function getFirstInput (operator){
-    let firstInput = displayValue;
-    let displayValue = "";
+function getFirstInput (value, operator){
+    let firstInput = value;
     let operatorInput = operator;
+    let displayValue = "";
+
+    let newFunctionDisplay = document.createTextNode(firstInput + " " + operator);
+
+    console.log(newFunctionDisplay);
+    console.log(displayValue);
+
+    functionDisplay.removeChild(functionDisplay.lastChild);
+    functionDisplay.appendChild(newFunctionDisplay);
+
     let newDisplay = document.createTextNode(displayValue);
-    display.removeChild(display.lastChild)
+    display.removeChild(display.lastChild);
     display.appendChild(newDisplay);
 };
 

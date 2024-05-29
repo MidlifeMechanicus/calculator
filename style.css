@@ -13,7 +13,13 @@ body {
 
     #displayContainer {
         display: flex;
+        flex-wrap: wrap;
         width: 80vw;
+
+        #functionDisplay {
+            width: 80vw;
+            text-align: right;
+        }
 
         button {
             width: 20vw;
