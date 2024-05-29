@@ -1,17 +1,14 @@
+let displayValue = "";
 
-// Get input from user
-// Calculate result
-//  If operand + add
-// 
-//  If operand - subtract
-// 
-//  If operand * multiply
-// 
-//  If operand / divide
-// 
-// display result
-// 
-// loop result into next calculation
+const display = document.getElementById("display");
+
+const buttonOne = document.getElementById("btn1");
+buttonOne.addEventListener("click", () => {
+    displayValue = displayValue + "1";
+    let newDisplayValue = document.createTextNode(displayValue);
+    display.removeChild(display.lastChild)
+    display.appendChild(newDisplayValue);
+})
 
 function calculateAnswer(firstNumber, operator, secondNumber){
     if (operator == "+"){
