@@ -68,7 +68,7 @@ buttonPlus.addEventListener("click", () => {
 
 const buttonEquals = document.getElementById("btn=");
 buttonEquals.addEventListener("click", () => {
-    getSecondInput(displayValue);
+    getSecondInput(displayValue, operatorInput);
 })
 
 
@@ -87,10 +87,6 @@ function getFirstInput (value, operator){
     displayValue = "";
 
     let newFunctionDisplay = document.createTextNode(firstInput + " " + operator);
-
-    console.log(newFunctionDisplay);
-    console.log(displayValue);
-
     functionDisplay.removeChild(functionDisplay.lastChild);
     functionDisplay.appendChild(newFunctionDisplay);
 
@@ -99,9 +95,14 @@ function getFirstInput (value, operator){
     display.appendChild(newDisplay);
 };
 
-function getSecondInput (value){
+function getSecondInput (value, operator){
     secondInput = value;
+    operatorInput = operator;
     displayValue = "";
+
+    let newFunctionDisplay = document.createTextNode(firstInput + " " + operator + "" + secondInput + " =");
+    functionDisplay.removeChild(functionDisplay.lastChild);
+    functionDisplay.appendChild(newFunctionDisplay);
 
     let newDisplay = document.createTextNode(calculateAnswer(firstInput, operatorInput, secondInput));
     display.removeChild(display.lastChild);
@@ -110,9 +111,10 @@ function getSecondInput (value){
 
 };
 
-function calculateAnswer(firstNumber, operator, secondNumber){
+function calculateAnswer(firstString, operator, secondString){
 
-    // need to turn strings into integers!!!
+    let firstNumber = parseInt(firstString);
+    let secondNumber = parseInt(secondString);
 
     if (operator == "+"){
         return firstNumber + secondNumber;
