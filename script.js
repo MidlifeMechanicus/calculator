@@ -66,18 +66,25 @@ buttonPlus.addEventListener("click", () => {
     getFirstInput(displayValue, "+");
 })
 
+const buttonEquals = document.getElementById("btn=");
+buttonEquals.addEventListener("click", () => {
+    getSecondInput(displayValue);
+})
+
+
 function getNewDisplay (newString) {
     displayValue = displayValue + newString;
     let newDisplay = document.createTextNode(displayValue);
     display.removeChild(display.lastChild);
     display.appendChild(newDisplay);
     return displayValue;
+    // Do we need this return?
 };
 
 function getFirstInput (value, operator){
-    let firstInput = value;
-    let operatorInput = operator;
-    let displayValue = "";
+    firstInput = value;
+    operatorInput = operator;
+    displayValue = "";
 
     let newFunctionDisplay = document.createTextNode(firstInput + " " + operator);
 
@@ -92,7 +99,21 @@ function getFirstInput (value, operator){
     display.appendChild(newDisplay);
 };
 
+function getSecondInput (value){
+    secondInput = value;
+    displayValue = "";
+
+    let newDisplay = document.createTextNode(calculateAnswer(firstInput, operatorInput, secondInput));
+    display.removeChild(display.lastChild);
+    display.appendChild(newDisplay);
+
+
+};
+
 function calculateAnswer(firstNumber, operator, secondNumber){
+
+    // need to turn strings into integers!!!
+
     if (operator == "+"){
         return firstNumber + secondNumber;
     } else if (operator == "-"){
