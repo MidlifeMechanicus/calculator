@@ -5,23 +5,10 @@ let secondInput;
 let displayAnswer;
 let justAnswered = false;
 
-// Todo: keystrokes, backspace button, double entry operators? equals on second operator? screen size adjust? premature = NaN
+// Todo: backspace button, double entry operators? equals on second operator? screen size adjust? premature = NaN
 
 const inputDisplay = document.getElementById("inputDisplay");
 const calculationDisplay = document.getElementById("calculationDisplay");
-
-const buttonClear = document.getElementById("btnClear");
-buttonClear.addEventListener("click", () => {
-    displayValue = "";
-    justAnswered = false;
-    let newDisplay = document.createTextNode(displayValue);
-    inputDisplay.removeChild(inputDisplay.lastChild);
-    inputDisplay.appendChild(newDisplay);"?"
-
-    let newCalculationDisplay = document.createTextNode("");
-    calculationDisplay.removeChild(calculationDisplay.lastChild);
-    calculationDisplay.appendChild(newCalculationDisplay);
-})
 
 const buttonOne = document.getElementById("btn1");
 buttonOne.addEventListener("click", () => {
@@ -223,6 +210,50 @@ document.addEventListener("keydown", () => {
         } else {
             getFirstInput(displayValue, "+");
         }
+    }
+})
+
+const buttonClear = document.getElementById("btnClear");
+buttonClear.addEventListener("click", () => {
+    displayValue = "";
+    justAnswered = false;
+    let newDisplay = document.createTextNode(displayValue);
+    inputDisplay.removeChild(inputDisplay.lastChild);
+    inputDisplay.appendChild(newDisplay);"?"
+
+    let newCalculationDisplay = document.createTextNode("");
+    calculationDisplay.removeChild(calculationDisplay.lastChild);
+    calculationDisplay.appendChild(newCalculationDisplay);
+})
+document.addEventListener("keydown", () => {
+    if (event.key === "Delete"){
+        displayValue = displayValue.slice(0, -1);
+        displayValue = "";
+        justAnswered = false;
+        let newDisplay = document.createTextNode(displayValue);
+        inputDisplay.removeChild(inputDisplay.lastChild);
+        inputDisplay.appendChild(newDisplay);"?"
+        
+        let newCalculationDisplay = document.createTextNode("");
+        calculationDisplay.removeChild(calculationDisplay.lastChild);
+        calculationDisplay.appendChild(newCalculationDisplay);
+    }
+})
+
+
+const buttonBack = document.getElementById("btnBack");
+buttonBack.addEventListener("click", () => {
+    displayValue = displayValue.slice(0, -1);
+    let newDisplay = document.createTextNode(displayValue);
+    inputDisplay.removeChild(inputDisplay.lastChild);
+    inputDisplay.appendChild(newDisplay);
+})
+document.addEventListener("keydown", () => {
+    if (event.key === "Backspace"){
+        displayValue = displayValue.slice(0, -1);
+        let newDisplay = document.createTextNode(displayValue);
+        inputDisplay.removeChild(inputDisplay.lastChild);
+        inputDisplay.appendChild(newDisplay);
     }
 })
 
