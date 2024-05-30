@@ -5,7 +5,7 @@ let secondInput;
 let displayAnswer;
 let justAnswered = false;
 
-// Todo: keystrokes, backspace button, double entry operators? equals on second operator? screen size adjust?
+// Todo: keystrokes, backspace button, double entry operators? equals on second operator? screen size adjust? premature = NaN
 
 const inputDisplay = document.getElementById("inputDisplay");
 const calculationDisplay = document.getElementById("calculationDisplay");
@@ -27,45 +27,95 @@ const buttonOne = document.getElementById("btn1");
 buttonOne.addEventListener("click", () => {
     getNewDisplay("1");
 })
+document.addEventListener("keydown", () => {
+    if (event.key === "1"){
+        getNewDisplay("1");
+    }
+})
 
 const buttonTwo = document.getElementById("btn2");
 buttonTwo.addEventListener("click", () => {
     getNewDisplay("2");
+})
+document.addEventListener("keydown", () => {
+    if (event.key === "2"){
+        getNewDisplay("2");
+    }
 })
 
 const buttonThree = document.getElementById("btn3");
 buttonThree.addEventListener("click", () => {
     getNewDisplay("3");
 })
+document.addEventListener("keydown", () => {
+    if (event.key === "3"){
+        getNewDisplay("3");
+    }
+})
 
 const buttonFour = document.getElementById("btn4");
 buttonFour.addEventListener("click", () => {
     getNewDisplay("4");
+})
+document.addEventListener("keydown", () => {
+    if (event.key === "4"){
+        getNewDisplay("4");
+    }
 })
 
 const buttonFive = document.getElementById("btn5");
 buttonFive.addEventListener("click", () => {
     getNewDisplay("5");
 })
+document.addEventListener("keydown", () => {
+    if (event.key === "5"){
+        getNewDisplay("5");
+    }
+})
 
 const buttonSix = document.getElementById("btn6");
 buttonSix.addEventListener("click", () => {
     getNewDisplay("6");
+    document.addEventListener("keydown", () => {
+        if (event.key === "6"){
+            getNewDisplay("6");
+        }
+    })
+})
+document.addEventListener("keydown", () => {
+    if (event.key === "6"){
+        getNewDisplay("6");
+    }
 })
 
 const buttonSeven = document.getElementById("btn7");
 buttonSeven.addEventListener("click", () => {
     getNewDisplay("7");
 })
+document.addEventListener("keydown", () => {
+    if (event.key === "7"){
+        getNewDisplay("7");
+    }
+})
 
 const buttonEight = document.getElementById("btn8");
 buttonEight.addEventListener("click", () => {
     getNewDisplay("8");
 })
+document.addEventListener("keydown", () => {
+    if (event.key === "8"){
+        getNewDisplay("8");
+    }
+})
 
 const buttonNine = document.getElementById("btn9");
 buttonNine.addEventListener("click", () => {
     getNewDisplay("9");
+})
+document.addEventListener("keydown", () => {
+    if (event.key === "9"){
+        getNewDisplay("9");
+    }
 })
 
 const buttonZero = document.getElementById("btn0");
@@ -75,6 +125,14 @@ buttonZero.addEventListener("click", () => {
         getNewDisplay("0");
     }
 })
+document.addEventListener("keydown", () => {
+    if (event.key === "0"){
+        if(displayValue == ""){
+        } else {
+            getNewDisplay("0");
+        }
+    }
+})
 
 const buttonDecimal = document.getElementById ("btnDot");
 buttonDecimal.addEventListener("click", () => {
@@ -82,16 +140,35 @@ buttonDecimal.addEventListener("click", () => {
     } else if (displayValue == ""){
         getNewDisplay("0.");
     } else {
-    getNewDisplay(".");
+        getNewDisplay(".");
     }
 });
+document.addEventListener("keydown", () => {
+    if (event.key === "."){
+        if (displayValue.includes(".")){
+        } else if(displayValue == ""){
+            getNewDisplay("0.");
+        } else {
+            getNewDisplay(".");
+        }
+    }
+})
 
 const buttonDivide = document.getElementById("btn/");
 buttonDivide.addEventListener("click", () => {
     if (justAnswered === true){
         getFirstInput(displayAnswer, "/");
     } else {
-    getFirstInput(displayValue, "/");
+        getFirstInput(displayValue, "/");
+    }
+})
+document.addEventListener("keydown", () => {
+    if (event.key === "/"){
+        if(justAnswered === true){
+            getFirstInput(displayAnswer, "/");
+        } else {
+            getFirstInput(displayValue, "/");
+        }
     }
 })
 
@@ -103,6 +180,15 @@ buttonMultiply.addEventListener("click", () => {
     getFirstInput(displayValue, "*");
     }
 })
+document.addEventListener("keydown", () => {
+    if (event.key === "*"){
+        if(justAnswered === true){
+            getFirstInput(displayAnswer, "*");
+        } else {
+            getFirstInput(displayValue, "*");
+        }
+    }
+})
 
 const buttonSubtract = document.getElementById("btn-");
 buttonSubtract.addEventListener("click", () => {
@@ -110,6 +196,15 @@ buttonSubtract.addEventListener("click", () => {
         getFirstInput(displayAnswer, "-");
     } else {
     getFirstInput(displayValue, "-");
+    }
+})
+document.addEventListener("keydown", () => {
+    if (event.key === "-"){
+        if(justAnswered === true){
+            getFirstInput(displayAnswer, "-");
+        } else {
+            getFirstInput(displayValue, "-");
+        }
     }
 })
 
@@ -121,13 +216,22 @@ buttonPlus.addEventListener("click", () => {
         getFirstInput(displayValue, "+");
     }
 })
+document.addEventListener("keydown", () => {
+    if (event.key === "+"){
+        if(justAnswered === true){
+            getFirstInput(displayAnswer, "+");
+        } else {
+            getFirstInput(displayValue, "+");
+        }
+    }
+})
 
 const buttonEquals = document.getElementById("btnEql");
 buttonEquals.addEventListener("click", () => {
     getSecondInput(displayValue, operatorInput);
 })
 document.addEventListener("keydown", () => {
-    if (event.key === "="){
+    if (event.key === "=" || event.key === "Enter"){
         getSecondInput(displayValue, operatorInput);
     }
 })
