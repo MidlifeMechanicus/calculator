@@ -6,7 +6,7 @@ let displayAnswer;
 let justAnswered = false;
 let isOperator = false;
 
-// Todo: double entry operators? equals on second operator? screen size adjust?
+// Todo: screen size adjust? numeral limit?
 
 const inputDisplay = document.getElementById("inputDisplay");
 const calculationDisplay = document.getElementById("calculationDisplay");
