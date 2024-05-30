@@ -13,25 +13,29 @@ body {
 
     #calculatorContainer {
         display: flex;
-        flex-direction: column;;
+        flex-direction: column;
+        justify-content: space-between;
+
+        width: 400px;
+        height: 800px;
+        padding: 25px;
 
         #displayContainer {
             display: flex;
-            flex-wrap: wrap;
-            width: 80vw;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            height: 25%;
 
             #calculationDisplay {
-                height: 10vw;
-                width: 80vw;
+                height: 45%;
+                width: 100%;
                 text-align: right;
             }
 
-            button {
-                width: 20vw;
-            }
-
             #inputDisplay {
-                width: 60vw;
+                width: 100%;
+                height: 45%;
                 text-align: right;
             }
         }
@@ -39,32 +43,43 @@ body {
         #keyPad {
             display: flex;
             justify-content: center;
+            height: 50%;
 
             #numeralContainer {
                 display: flex;
                 flex-wrap: wrap;
-                width: 60vw;
+                width: 75%;
             
                 button {
-                    width: 33.3333%;
+                    width: 31%; 
+                    aspect-ratio: 1/1;
+
+                    margin: 1%;
+                    /* Horizonal margins do not collapse. Pain it the ass. */
                 }
             }
 
             #operatorContainer {
                 display: flex;
                 flex-direction: column;
-                width: 20vw;
+                width: 25%;
+
+                button {
+                    aspect-ratio: 1/1;
+                }
             }
         }
 
         #specialKeyContainer {
+            display: flex;
+            height: 10%;
 
             #btnClear {
-                width: 20vw;
+                width: 40%;
             }
 
             #btnEql {
-                width: 60vw;
+                width: 60%;
             }
         }
     }
