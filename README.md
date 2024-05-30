@@ -17,7 +17,7 @@ This is is a calculator project for the Odin Project Foundations course. The par
 
 Web page is reactive; once the viewport width drops below 600px, the calculator becomes smaller, as do the fonts, and the layout of the header changes slightly. This accomodates mobile devices.
 
-Limited the length of input numbers to nine digits. If the project wants to limit decimal places to avoid overruns, then it only makes sense to limit inputs for the same reason.
+Limited the length of input numbers to eight digits. If the project wants to limit decimal places to avoid overruns, then it only makes sense to limit inputs for the same reason.
 
 ### Notes on html and css layout:
 

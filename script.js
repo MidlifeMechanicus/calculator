@@ -268,7 +268,7 @@ document.addEventListener("keydown", () => {
 
 
 function getNewDisplay (newString){
-    if (displayValue.length > 9){
+    if (displayValue.length > 8){
     } else {
         justAnswered = false;
         displayValue = displayValue + newString;
