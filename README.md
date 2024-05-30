@@ -15,14 +15,9 @@ Extra credit features:
 
 Other features (because I wanted to):
 
-I also made the web page reactive; once the viewport width drops below 600px, the calculator becomes smaller, as do the fonts, and the layout of the header changes slightly.
+Web page is reactive; once the viewport width drops below 600px, the calculator becomes smaller, as do the fonts, and the layout of the header changes slightly. This accomodates mobile devices.
 
--calculator becomes smaller at a screen width of less than 600px to accomodate mobile browsers
--layout of header also changes slightly 
-number cap?
-theme change?
-screen adjust?
-cannot deliberately divide by zero
+Limited the length of input numbers to nine digits. If the project wants to limit decimal places to avoid overruns, then it only makes sense to limit inputs for the same reason.
 
 Thoughts on html and css layout:
 

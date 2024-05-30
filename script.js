@@ -268,11 +268,14 @@ document.addEventListener("keydown", () => {
 
 
 function getNewDisplay (newString){
-    justAnswered = false;
-    displayValue = displayValue + newString;
-    let newDisplay = document.createTextNode(displayValue);
-    inputDisplay.removeChild(inputDisplay.lastChild);
-    inputDisplay.appendChild(newDisplay);
+    if (displayValue.length > 9){
+    } else {
+        justAnswered = false;
+        displayValue = displayValue + newString;
+        let newDisplay = document.createTextNode(displayValue);
+        inputDisplay.removeChild(inputDisplay.lastChild);
+        inputDisplay.appendChild(newDisplay);
+    }
 };
 
 function getFirstInput (value, operator){
@@ -320,8 +323,6 @@ function getSecondInput (value, operator){
         inputDisplay.removeChild(inputDisplay.lastChild);
         inputDisplay.appendChild(newDisplay);
     }
-    
-
 };
 
 function calculateAnswer(firstString, operator, secondString){
