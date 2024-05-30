@@ -4,8 +4,9 @@ let operatorInput;
 let secondInput;
 let displayAnswer;
 let justAnswered = false;
+let isOperator = false;
 
-// Todo: backspace button, double entry operators? equals on second operator? screen size adjust? premature = NaN
+// Todo: double entry operators? equals on second operator? screen size adjust?
 
 const inputDisplay = document.getElementById("inputDisplay");
 const calculationDisplay = document.getElementById("calculationDisplay");
@@ -233,13 +234,12 @@ document.addEventListener("keydown", () => {
         let newDisplay = document.createTextNode(displayValue);
         inputDisplay.removeChild(inputDisplay.lastChild);
         inputDisplay.appendChild(newDisplay);"?"
-        
+
         let newCalculationDisplay = document.createTextNode("");
         calculationDisplay.removeChild(calculationDisplay.lastChild);
         calculationDisplay.appendChild(newCalculationDisplay);
     }
 })
-
 
 const buttonBack = document.getElementById("btnBack");
 buttonBack.addEventListener("click", () => {
@@ -292,6 +292,8 @@ function getFirstInput (value, operator){
     let newDisplay = document.createTextNode(displayValue);
     inputDisplay.removeChild(inputDisplay.lastChild);
     inputDisplay.appendChild(newDisplay);
+
+    isOperator = true;
 };
 
 function getSecondInput (value, operator){
@@ -300,18 +302,23 @@ function getSecondInput (value, operator){
     // }
     // Above code is condensed below.
     secondInput = (value == "") ? "0" : value;
-    operatorInput = operator;
-    displayValue = "";
-    displayAnswer = Math.round(calculateAnswer(firstInput, operatorInput, secondInput).toString()*100)/100;
-    justAnswered = true;
+    if (isOperator === false){
+    } else{
+        operatorInput = operator;
+        displayValue = "";
+        displayAnswer = Math.round(calculateAnswer(firstInput, operatorInput, secondInput).toString()*100)/100;
+        justAnswered = true;
+        isOperator = false;
 
-    let newCalculationDisplay = document.createTextNode(firstInput + " " + operator + " " + secondInput + " = ");
-    calculationDisplay.removeChild(calculationDisplay.lastChild);
-    calculationDisplay.appendChild(newCalculationDisplay);
+        let newCalculationDisplay = document.createTextNode(firstInput + " " + operator + " " + secondInput + " = ");
+        calculationDisplay.removeChild(calculationDisplay.lastChild);
+        calculationDisplay.appendChild(newCalculationDisplay);
 
-    let newDisplay = document.createTextNode(displayAnswer);
-    inputDisplay.removeChild(inputDisplay.lastChild);
-    inputDisplay.appendChild(newDisplay);
+        let newDisplay = document.createTextNode(displayAnswer);
+        inputDisplay.removeChild(inputDisplay.lastChild);
+        inputDisplay.appendChild(newDisplay);
+    }
+    
 
 };
 
