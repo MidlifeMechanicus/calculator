@@ -126,6 +126,11 @@ const buttonEquals = document.getElementById("btnEql");
 buttonEquals.addEventListener("click", () => {
     getSecondInput(displayValue, operatorInput);
 })
+document.addEventListener("keydown", () => {
+    if (event.key === "="){
+        getSecondInput(displayValue, operatorInput);
+    }
+})
 
 
 function getNewDisplay (newString){
