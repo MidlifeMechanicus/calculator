@@ -1,6 +1,12 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto; 
+    font-weight: bold;
+    /* Do we need the above? */
+    color: #23b2ee;
+
     border: 1px solid black;
 }
 
@@ -10,15 +16,29 @@ body {
     height: 100vh;
     justify-content: center;
     align-items: center;
+    
+    background: #839099;
+
+    header {
+        width: 100%;
+        height: 30px;
+        margin-bottom: auto;
+        background-color: #1d394a;
+    }
 
     #calculatorContainer {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        margin: auto;
 
         width: 400px;
         height: 800px;
         padding: 25px;
+
+        background: #898989;
+        border: 3px solid #1d394a;
+        border-radius: 25px;
 
         #displayContainer {
             display: flex;
@@ -31,12 +51,14 @@ body {
                 height: 45%;
                 width: 100%;
                 text-align: right;
+                background:#142027;
             }
 
             #inputDisplay {
                 width: 100%;
                 height: 45%;
                 text-align: right;
+                background: #142027;
             }
         }
 
@@ -53,9 +75,9 @@ body {
                 button {
                     width: 31%; 
                     aspect-ratio: 1/1;
-
                     margin: 1%;
                     /* Horizonal margins do not collapse. Pain it the ass. */
+                    background: #1d394a;
                 }
             }
 
@@ -66,6 +88,7 @@ body {
 
                 button {
                     aspect-ratio: 1/1;
+                    background: #839099;
                 }
             }
         }
@@ -76,10 +99,12 @@ body {
 
             #btnClear {
                 width: 40%;
+                background: #913923;
             }
 
             #btnEql {
                 width: 60%;
+                background: #839099;
             }
         }
     }
