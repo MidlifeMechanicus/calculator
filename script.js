@@ -153,7 +153,7 @@ function getSecondInput (value, operator){
     secondInput = (value == "") ? "0" : value;
     operatorInput = operator;
     displayValue = "";
-    displayAnswer = calculateAnswer(firstInput, operatorInput, secondInput).toString();
+    displayAnswer = Math.round(calculateAnswer(firstInput, operatorInput, secondInput).toString()*100)/100;
     justAnswered = true;
 
     let newCalculationDisplay = document.createTextNode(firstInput + " " + operator + " " + secondInput + " = ");
