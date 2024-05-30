@@ -97,7 +97,12 @@ body {
 
             .operatorButton {
                 background: #245570;
-                }
+            }
+            
+            #btn0 {
+                width: 48%;
+                aspect-ratio: 48/23;
+            }
         }
 
         #specialKeyContainer {
