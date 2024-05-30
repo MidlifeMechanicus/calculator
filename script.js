@@ -77,6 +77,16 @@ buttonZero.addEventListener("click", () => {
     }
 })
 
+const buttonDecimal = document.getElementById ("btnDot");
+buttonDecimal.addEventListener("click", () => {
+    if (displayValue.includes(".")){
+    } else if (displayValue == ""){
+        getNewDisplay("0.");
+    } else {
+    getNewDisplay(".");
+    }
+});
+
 const buttonDivide = document.getElementById("btn/");
 buttonDivide.addEventListener("click", () => {
     if (justAnswered === true){
@@ -168,8 +178,8 @@ function getSecondInput (value, operator){
 
 function calculateAnswer(firstString, operator, secondString){
 
-    let firstNumber = parseInt(firstString);
-    let secondNumber = parseInt(secondString);
+    let firstNumber = Number(firstString);
+    let secondNumber = Number(secondString);
 
     if (operator == "+"){
         return firstNumber + secondNumber;
