@@ -2,10 +2,11 @@ let displayValue = "";
 let firstInput;
 let operatorInput;
 let secondInput;
+let displayAnswer;
+let justAnswered = false;
 
-// Todo: html/css (obviously), rounding, double operater issue, decimal? keystrokes, backspace button, /0 error message in display rather than alert, header with links
+// Todo: rounding, double operater issue, decimal? keystrokes, backspace button, /0 error message in display rather than alert, header with links
 // CODE ISSUE WITH CARRY NUMBER FORWARD
-
 
 const inputDisplay = document.getElementById("inputDisplay");
 const calculationDisplay = document.getElementById("calculationDisplay");
@@ -13,6 +14,7 @@ const calculationDisplay = document.getElementById("calculationDisplay");
 const buttonClear = document.getElementById("btnClear");
 buttonClear.addEventListener("click", () => {
     displayValue = "";
+    justAnswered = false;
     let newDisplay = document.createTextNode(displayValue);
     inputDisplay.removeChild(inputDisplay.lastChild);
     inputDisplay.appendChild(newDisplay);"?"
@@ -77,22 +79,38 @@ buttonZero.addEventListener("click", () => {
 
 const buttonDivide = document.getElementById("btn/");
 buttonDivide.addEventListener("click", () => {
+    if (justAnswered === true){
+        getFirstInput(displayAnswer, "/");
+    } else {
     getFirstInput(displayValue, "/");
+    }
 })
 
 const buttonMultiply = document.getElementById("btn*");
 buttonMultiply.addEventListener("click", () => {
+    if (justAnswered === true){
+        getFirstInput(displayAnswer, "*");
+    } else {
     getFirstInput(displayValue, "*");
+    }
 })
 
 const buttonSubtract = document.getElementById("btn-");
 buttonSubtract.addEventListener("click", () => {
+    if (justAnswered === true){
+        getFirstInput(displayAnswer, "-");
+    } else {
     getFirstInput(displayValue, "-");
+    }
 })
 
 const buttonPlus = document.getElementById("btn+");
 buttonPlus.addEventListener("click", () => {
-    getFirstInput(displayValue, "+");
+    if (justAnswered === true){
+        getFirstInput(displayAnswer, "+");
+    } else {
+        getFirstInput(displayValue, "+");
+    }
 })
 
 const buttonEquals = document.getElementById("btnEql");
@@ -101,7 +119,8 @@ buttonEquals.addEventListener("click", () => {
 })
 
 
-function getNewDisplay (newString) {
+function getNewDisplay (newString){
+    justAnswered = false;
     displayValue = displayValue + newString;
     let newDisplay = document.createTextNode(displayValue);
     inputDisplay.removeChild(inputDisplay.lastChild);
@@ -135,6 +154,7 @@ function getSecondInput (value, operator){
     operatorInput = operator;
     displayValue = "";
     displayAnswer = calculateAnswer(firstInput, operatorInput, secondInput).toString();
+    justAnswered = true;
 
     let newCalculationDisplay = document.createTextNode(firstInput + " " + operator + " " + secondInput + " = ");
     calculationDisplay.removeChild(calculationDisplay.lastChild);
