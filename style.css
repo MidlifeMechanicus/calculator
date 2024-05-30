@@ -2,12 +2,12 @@
     box-sizing: border-box;
     margin: 0;
     font-family: "Orbitron", sans-serif;
-    font-optical-sizing: auto; 
+    font-size: 1.1rem;
     font-weight: bold;
     /* Do we need the above? */
     color: #23b2ee;
+    list-style-type: none;
 
-    border: 1px solid black;
 }
 
 body {
@@ -17,13 +17,26 @@ body {
     justify-content: center;
     align-items: center;
     
-    background: #839099;
+    /* background: #7b96aa; */
+    background: #c8e5fa;
+    font-size: 62.5%;
 
     header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         width: 100%;
         height: 30px;
         margin-bottom: auto;
+        padding: 0 20px;
         background-color: #1d394a;
+
+        ul {
+            display: flex;
+            li {
+                margin: 0 10px;
+            }
+        }
     }
 
     #calculatorContainer {
@@ -39,6 +52,7 @@ body {
         background: #898989;
         border: 3px solid #1d394a;
         border-radius: 25px;
+        box-shadow: 10px 10px;
 
         #displayContainer {
             display: flex;
@@ -47,50 +61,43 @@ body {
             width: 100%;
             height: 25%;
 
-            #calculationDisplay {
+            #calculationDisplay, #inputDisplay {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
                 height: 45%;
                 width: 100%;
+                border: 3px solid #1d394a;
+                border-radius: 10px;
+                padding: 5%;
                 text-align: right;
                 background:#142027;
             }
 
-            #inputDisplay {
-                width: 100%;
-                height: 45%;
-                text-align: right;
-                background: #142027;
-            }
+            /* #inputDisplay { */
+                /* width: 100%; */
+                /* height: 45%; */
+                /* text-align: right; */
+                /* background: #142027; */
+            /* } */
         }
 
         #keyPad {
             display: flex;
-            justify-content: center;
+            flex-wrap: wrap;
             height: 50%;
 
-            #numeralContainer {
-                display: flex;
-                flex-wrap: wrap;
-                width: 75%;
-            
-                button {
-                    width: 31%; 
-                    aspect-ratio: 1/1;
-                    margin: 1%;
-                    /* Horizonal margins do not collapse. Pain it the ass. */
-                    background: #1d394a;
-                }
+            button {
+                width: 23%; 
+                aspect-ratio: 1/1;
+                margin: 1%;
+                border-radius: 10px;;
+                background: #1d394a;
             }
 
-            #operatorContainer {
-                display: flex;
-                flex-direction: column;
-                width: 25%;
-
-                button {
-                    aspect-ratio: 1/1;
-                    background: #839099;
+            .operatorButton {
+                background: #245570;
                 }
-            }
         }
 
         #specialKeyContainer {
@@ -104,9 +111,17 @@ body {
 
             #btnEql {
                 width: 60%;
-                background: #839099;
+                background: #245570;
             }
         }
+    }
+
+    footer {
+        width: 100%;
+        height: 30px;
+        margin-top: auto;
+        background-color: #1d394a;
+        text-align: center;
     }
 }
 

@@ -4,6 +4,8 @@ let operatorInput;
 let secondInput;
 
 // Todo: html/css (obviously), rounding, double operater issue, decimal? keystrokes, backspace button, /0 error message in display rather than alert, header with links
+// CODE ISSUE WITH CARRY NUMBER FORWARD
+
 
 const inputDisplay = document.getElementById("inputDisplay");
 const calculationDisplay = document.getElementById("calculationDisplay");
