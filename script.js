@@ -5,8 +5,7 @@ let secondInput;
 let displayAnswer;
 let justAnswered = false;
 
-// Todo: rounding, double operater issue, decimal? keystrokes, backspace button, /0 error message in display rather than alert, header with links
-// CODE ISSUE WITH CARRY NUMBER FORWARD
+// Todo: keystrokes, backspace button, double entry operators? equals on second operator? screen size adjust?
 
 const inputDisplay = document.getElementById("inputDisplay");
 const calculationDisplay = document.getElementById("calculationDisplay");

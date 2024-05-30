@@ -73,13 +73,6 @@ body {
                 text-align: right;
                 background:#142027;
             }
-
-            /* #inputDisplay { */
-                /* width: 100%; */
-                /* height: 45%; */
-                /* text-align: right; */
-                /* background: #142027; */
-            /* } */
         }
 
         #keyPad {
@@ -109,13 +102,18 @@ body {
             display: flex;
             height: 10%;
 
-            #btnClear {
-                width: 40%;
+            button {
+                margin: 1%;
+                border-radius: 10px;
+            }
+
+            #btnClear, #btnBack {
+                width: 23%;
                 background: #913923;
             }
 
             #btnEql {
-                width: 60%;
+                width: 48%;
                 background: #245570;
             }
         }
