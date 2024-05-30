@@ -13,7 +13,12 @@ Extra credit features:
 -backspace button
 -keyboard support
 
-Other features:
+Other features (because I wanted to):
+
+I also made the web page reactive; once the viewport width drops below 600px, the calculator becomes smaller, as do the fonts, and the layout of the header changes slightly.
+
+-calculator becomes smaller at a screen width of less than 600px to accomodate mobile browsers
+-layout of header also changes slightly 
 number cap?
 theme change?
 screen adjust?
@@ -21,4 +26,4 @@ cannot deliberately divide by zero
 
 Thoughts on html and css layout:
 
-I am a web developer, not a web designer. I have no interest in being a web designer. Clean, simple layouts with decent color matching are as far as I go on my own.
+I am a web developer, not a web designer. I have no interest in being a web designer. Clean, simple layouts with decent color matching are as far as I go on my own. I am more than happy to implement other people's amazing ideas, though!

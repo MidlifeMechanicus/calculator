@@ -1,8 +1,12 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    padding: 0;
     font-family: "Orbitron", sans-serif;
     font-size: 1.1rem;
+    @media screen and (max-width: 600px){
+        font-size: .9rem;
+    }
     font-weight: bold;
     /* Do we need the above? */
     color: #23b2ee;
@@ -23,6 +27,11 @@ body {
 
     header {
         display: flex;
+        @media screen and (max-width: 600px){
+            flex-direction: column;
+            justify-content: space-evenly;
+            height: 60px;
+        }
         justify-content: space-between;
         align-items: center;
         width: 100%;
@@ -46,7 +55,10 @@ body {
         margin: auto;
 
         width: 400px;
-        height: 800px;
+        @media screen and (max-width: 600px){
+            width: 300px;
+        }
+        aspect-ratio: 1/2;
         padding: 25px;
 
         background: #898989;
@@ -120,11 +132,13 @@ body {
     }
 
     footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
         width: 100%;
         height: 30px;
         margin-top: auto;
         background-color: #1d394a;
-        text-align: center;
     }
 }
-

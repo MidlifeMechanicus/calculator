@@ -6,8 +6,6 @@ let displayAnswer;
 let justAnswered = false;
 let isOperator = false;
 
-// Todo: screen size adjust? numeral limit?
-
 const inputDisplay = document.getElementById("inputDisplay");
 const calculationDisplay = document.getElementById("calculationDisplay");
 
