@@ -218,6 +218,7 @@ const buttonClear = document.getElementById("btnClear");
 buttonClear.addEventListener("click", () => {
     displayValue = "";
     justAnswered = false;
+    isOperator = false;
     let newDisplay = document.createTextNode(displayValue);
     inputDisplay.removeChild(inputDisplay.lastChild);
     inputDisplay.appendChild(newDisplay);"?"
@@ -282,18 +283,21 @@ function getFirstInput (value, operator){
     // }
     // Above code is condensed below.
     firstInput = (value == "") ? "0" : value;
-    operatorInput = operator;
-    displayValue = "";
+    if (isOperator === true){
+    } else {
+        operatorInput = operator;
+        displayValue = "";
 
-    let newCalculationDisplay = document.createTextNode(firstInput + " " + operator);
-    calculationDisplay.removeChild(calculationDisplay.lastChild);
-    calculationDisplay.appendChild(newCalculationDisplay);
+        let newCalculationDisplay = document.createTextNode(firstInput + " " + operator);
+        calculationDisplay.removeChild(calculationDisplay.lastChild);
+        calculationDisplay.appendChild(newCalculationDisplay);
 
-    let newDisplay = document.createTextNode(displayValue);
-    inputDisplay.removeChild(inputDisplay.lastChild);
-    inputDisplay.appendChild(newDisplay);
+        let newDisplay = document.createTextNode(displayValue);
+        inputDisplay.removeChild(inputDisplay.lastChild);
+        inputDisplay.appendChild(newDisplay);
 
-    isOperator = true;
+        isOperator = true;
+    }
 };
 
 function getSecondInput (value, operator){
